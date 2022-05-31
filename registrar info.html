@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar datos</title>
+    <link rel="stylesheet" href="./registros.css" />
+   
+</head>
+<body>
+  
+    <a class="back" href="./registros.html">Regresar</a>
+    <div class="container">
+      <form action="" class="form">
+          <p class="form-titulo">Ingrese datos</p>
+       <div>
+           <p>Ingrese Fecha:</p>
+        <input type="date" id="Date">
+       </div>
+           <div>
+            <p>Seleciona una moneda:</p>
+            <label>Dolar: </label>
+            <input type="radio" name="moneda" value="Dolar" id="dollar">
+            <label>Bolivar: </label>
+            <input type="radio" name="moneda" value="Bolivar" id="bolivars">
+           </div>
+           <!-- <div>
+            <p>Seleciona un sistema:</p>
+            <label>opcion1: </label>
+            <input type="radio" name="opcion" value="opcion1">
+            <label>opcion2: </label>
+            <input type="radio" name="opcion" value="opcion2">
+            <label>opcion3: </label>
+            <input type="radio" name="opcion" value="opcion3">
+           </div>
+       <div>
+        <li><label for="monto1">Monto:</label></li>
+        <input type="text" id="monto1">
+        <li><label for="monto2">Monto:</label></li>
+        <input type="text" id="monto2">
+        <li><label for="monto3">Monto:</label></li>
+        <input type="text" id="monto3">
+        <li><label for="monto4">Monto:</label></li>
+        <input type="text" id="monto4">
+       </div> -->
+       <div>
+           <input type="submit" value="Guardar" id="guardar">
+       </div>
+      </form>
+    </div>
+    <script src="./registros.JV.js"></script>
+    <script src="./registrosLogic.js"></script>
+</body>
+
+</html>
