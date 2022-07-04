@@ -9,48 +9,96 @@
    
 </head>
 <body>
-  
-    <a class="back" href="./registros.html">Regresar</a>
+    <div class="Info">
+        <h1>Usuarios: </h1>
+        <table id="usersTable"> 
+         <thead>
+            <tr>
+                <th>Nombre:</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>Fecha:</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>Moneda:</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>Saldo:</th>
+            </tr>
+         </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+       </div>
     <div class="container">
       <form action="" class="form">
           <p class="form-titulo">Ingrese datos</p>
+          <div>
+            <label for="usuario" class="name1">Nombre</label>
+            <input type="text" id="Name">
+        </div>
        <div>
            <p>Ingrese Fecha:</p>
         <input type="date" id="Date">
        </div>
-           <div>
+           <div id="moneda">
             <p>Seleciona una moneda:</p>
             <label>Dolar: </label>
-            <input type="radio" name="moneda" value="Dolar" id="dollar">
+            <input type="radio" id="dollar">
             <label>Bolivar: </label>
-            <input type="radio" name="moneda" value="Bolivar" id="bolivars">
+            <input type="radio" id="bolivars">
            </div>
-           <!-- <div>
-            <p>Seleciona un sistema:</p>
-            <label>opcion1: </label>
-            <input type="radio" name="opcion" value="opcion1">
-            <label>opcion2: </label>
-            <input type="radio" name="opcion" value="opcion2">
-            <label>opcion3: </label>
-            <input type="radio" name="opcion" value="opcion3">
+           <p>Ingrese las ganancias:</p>
+           <div>
+            <label for="InputZloteria">
+                Zloteria: 
+               </label> 
+               <input id="InputZloteria" type="number"/>
+
+               <label for="InputFenix">
+                Fenix: 
+               </label> 
+               <input id="InputFenix" type="number"/>
+               <label for="InputFelino">
+                Gato/Galileo: 
+               </label> 
+               <input id="InputFelino" type="number"/>
+               <label for="InputLotex">
+                Lotex: 
+               </label> 
+               <input id="InputLotex" type="number"/>
+               <label for="InputMatrix">
+                Matrix: 
+               </label> 
+               <input id="InputMatrix" type="number"/>
+               <label for="InputPorley">
+                Porley: 
+               </label> 
+               <input id="InputPorley" type="number"/>
+               <label for="InputAtens">
+                Atens: 
+               </label> 
+               <input id="InputAtens" type="number"/>
+           </div>
+           <div>
+            <button type="button" onclick="ButtonResults()" id="Results">
+                Mostrar resultado
+            </button>
+            <p id="Results"></p>
            </div>
        <div>
-        <li><label for="monto1">Monto:</label></li>
-        <input type="text" id="monto1">
-        <li><label for="monto2">Monto:</label></li>
-        <input type="text" id="monto2">
-        <li><label for="monto3">Monto:</label></li>
-        <input type="text" id="monto3">
-        <li><label for="monto4">Monto:</label></li>
-        <input type="text" id="monto4">
-       </div> -->
-       <div>
-           <input type="submit" value="Guardar" id="guardar">
+        <button type="button" class="buttonDato" id="BtnSavename">Guardar</button>
        </div>
+
+       
       </form>
     </div>
-    <script src="./registros.JV.js"></script>
-    <script src="./registrosLogic.js"></script>
+   
 </body>
+<script src="./SeccionDeRegistros.js"></script>
 
 </html>
