@@ -27,30 +27,45 @@ bolivars.addEventListener('click', ()=>{
     getCurrency(2);
 });
 
+let generarId;
+let MakeID = document.getElementById("genID");
 
-function generarId(longitud) {
-    if (typeof longitud != 'number') {
-        throw TypeError('El argumento longitud debe ser numero');
+function generarId(longitud, opcion) {
+    switch (opcion) {
+        case 1:
+            if(MakeID.click){
+                if (typeof longitud != 'number') {
+                    throw TypeError('El argumento longitud debe ser numero');
+                }
+            
+            
+            
+            let id = '';
+            const CARACTERES = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ 0123456789';
+            
+            for (let i = 0; i < longitud; i++) {
+                id += CARACTERES.charAt(Math.floor(Math.random() * CARACTERES.length))
+                
+            }
+            return id;
+            }
+            
+            try {
+                console.log(generarId(5));
+            } catch (e) {
+                console.log('Error: ${e.message}');
+            }
+            break;
+            }
+           
     }
 
+    MakeID.addEventListener('click', ()=>{
+        generarId(1);
+    });
 
 
-let id = '';
-const CARACTERES = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ 0123456789';
-
-for (let i = 0; i < longitud; i++) {
-    id += CARACTERES.charAt(Math.floor(Math.random() * CARACTERES.length))
-    
-}
-return id;
-}
-
-try {
-    console.log(generarId(5));
-} catch (e) {
-    console.log('Error: ${e.message}');
-}
-
+   
 
 
 let CalLoteria = 0;
@@ -71,6 +86,7 @@ function addUserToSystem(Pname, Pdate ,Presult,Pzloteria,Pfenix,Pgg,Plotex,Pmatr
      Matrix : +Pmatrix,
      Porley : +Pporley,
      Atens : +Patens,
+     iD : generarId,
      Result : +Presult
     };
     console.log(newUser);
@@ -87,9 +103,10 @@ function saveName(){
     var sName = document.querySelector('#Name').value,
           sDate = document.querySelector('#Date').value,
           smoneda = document.querySelector('#moneda').value,
+          sID = document.querySelector('#genID').value,
           sResult = document.querySelector('#Results').value;
 
-          addUserToSystem(sName,sDate,sResult);
+          addUserToSystem(sName,sDate,smoneda,sResult,sID);
           drawUsers();
 
 
@@ -107,10 +124,12 @@ var nameCell = row.insertCell(0);
 var DateCell = row.insertCell(1);
 var dollarCell = row.insertCell(2);
 var SaldoCell = row.insertCell(3);
+var idCell = row.insertCell(4);
 nameCell.innerHTML = list[i].Name;
 DateCell.innerHTML = list[i].Date;
 dollarCell.innerHTML = list[i].Moneda;
 SaldoCell.innerHTML = list[i].Result;
+idCell.innerHTML = list[i].iD;
 var inputSelect = document.createElement('input');
 inputSelect.type = 'radio';
 inputSelect.value = list[i].Name;
